@@ -1,0 +1,18 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "CodeCore Final Project with React Redux Express & MongoDB ",
+  "main": "index.js",
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.7.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Francis Pham",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
