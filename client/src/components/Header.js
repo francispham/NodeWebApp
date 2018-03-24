@@ -28,7 +28,7 @@ class Header extends Component {
       <nav>
         <div className="nav-wrapper">
           <Link
-            to={this.props.auth ? '/surveys' : '/'}
+            to={this.props.auth ? '/clients' : '/'}
             className="left brand-logo"
           >
             Stmedi Spa

@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h2>Dashboard</h2>
+import Dashboard from './Dashboard';
+import ClientNew from './clients/ClientNew';
+
+
 const SurveyNew = () => <h2>SurveyNew</h2>
 
 class App extends Component {
@@ -20,8 +22,9 @@ class App extends Component {
           <div>
             <Header/>
             <Route exact path="/" component={Landing}/>
-            <Route exact path="/surveys" component={Dashboard}/>
+            <Route exact path="/clients" component={Dashboard}/>
             <Route path="/surveys/new" component={SurveyNew}/>
+            <Route path="/clients/new" component={ClientNew}/>
           </div>
         </BrowserRouter>
       </div>

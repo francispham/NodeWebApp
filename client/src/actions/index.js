@@ -12,3 +12,7 @@ export const handleToken = (token) => async dispatch => {
 
   dispatch({type: FETCH_USER, payload: res.data });
 };
+
+export const submitClient = values => {
+  return { type: 'submit_client ' };
+};
