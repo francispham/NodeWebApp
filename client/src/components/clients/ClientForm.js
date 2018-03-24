@@ -1,31 +1,28 @@
 // ClientForm shows a form for a user to add input
+import _ from 'lodash';
 import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
 import ClientField from './ClientField';
+import formFields from './formFields';
 
-/* Can use this later, see lecture 150:
-const FIELD = [
-  {},
-  {},
-  {},
-  {},
-]
-*/
+
+
 
 class ClientForm extends Component {
 
   renderFields() {
-    return (<div>
-      <Field label="How did you hear about us?" type="text" name="marketing" component={ClientField}/>
-      <Field label="Client Name" type="text" name="name" placeholder="Name" component={ClientField}/>
-      <Field label="Client Email" type="email" name="email" placeholder="email@gmail.com" component={ClientField}/>
-      <Field label="Phone Number" type="number" name="phone" placeholder="Phone Number" component={ClientField}/>
-      <Field label="Age" type="number" name="age" component={ClientField}/>
-      <Field label="Client Address" type="text" name="address" placeholder="Address" component={ClientField}/>
-      <Field label="City" type="text" name="City" placeholder="city" component={ClientField}/>
-      <Field label="Postal Code" type="text" name="postalCode" placeholder="Postal Code" component={ClientField}/>
-    </div>);
+    return _.map(formFields, ({ label, type, name }) => {
+      return (
+        <Field
+          key={name}
+          component={ClientField}
+          type={type}
+          label={label}
+          name={name}
+        />
+      )
+    })
   }
 
   render() {
@@ -47,14 +44,20 @@ class ClientForm extends Component {
     );
   }
 }
-//todo: Add validation after creating the FIELD (lecture 154 - 156)
+
 function validate(values) {
   const errors = {};
+  _.each(formFields, ({ name }) => {
+    if (!values[name]) {
+      errors[name] = 'Field can not be blank!';
+    }
+  });
 
-  if (!values.name) {
-    errors.name = 'You must provide your name';
-  }
   return errors;
 }
 
-export default reduxForm({validate, form: 'clientForm'})(ClientForm);
+export default reduxForm({
+  validate,
+  form: 'clientForm',
+  destroyOnUnmount: false
+})(ClientForm);

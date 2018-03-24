@@ -14,7 +14,9 @@ class ClientNew extends Component {
 */
   renderContent() {
     if (this.state.showFormReview) {
-      return <ClientFormReview />;
+      return <ClientFormReview
+              onCancel={() => this.setState({ showFormReview: false })}
+            />;
     }
 
     return <ClientForm
