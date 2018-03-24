@@ -6,7 +6,7 @@ export default ({input, label, meta: { error, touched } }) => {
   return (
     <div>
       <label>{label}</label>
-      <input {...input} style={{ marginBottom: '5px' }}/>
+      <input {...input} style={{ marginBottom: '5px' }} autoComplete={"on|off"}/>
       <div className="red-text" style={{ marginBottom: '20' }}>
         {touched && error}
       </div>
