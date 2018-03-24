@@ -18,9 +18,11 @@ class ClientForm extends Component {
   renderFields()  {
     return (
       <div>
+        <Field label="How did you hear about us?" type="text" name="marketing" component={ClientField}/>
         <Field label="Client Name" type="text" name="name" placeholder="Name" component={ClientField}/>
         <Field label="Client Email" type="email" name="email" placeholder="email@gmail.com" component={ClientField}/>
         <Field label="Phone Number" type="number" name="phone" placeholder="Phone Number" component={ClientField}/>
+        <Field label="Age" type="number" name="age" component={ClientField}/>
         <Field label="Client Address" type="text" name="address" placeholder="Address" component={ClientField}/>
         <Field label="City" type="text" name="City" placeholder="city" component={ClientField}/>
         <Field label="Postal Code" type="text" name="postalCode" placeholder="Postal Code" component={ClientField}/>
@@ -49,5 +51,31 @@ class ClientForm extends Component {
     </div>);
   }
 }
+/* // TODO: Add validation after creating the FIELD (lecture 154 - 156)
+function  validate(values) {
+  const errors = {};
 
-export default reduxForm({form: 'clientForm'})(ClientForm);
+  if (!values.name) {
+    errors.name = 'You must provide your name';
+  }
+  return errors;
+}
+*/
+export default reduxForm({
+  validate,
+  form: 'clientForm'
+})(ClientForm);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
