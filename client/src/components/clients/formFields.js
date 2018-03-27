@@ -12,6 +12,14 @@ export default[
     type: 'email',
     name: 'email'
   }, {
+    label: 'Password',
+    type: 'password',
+    name: 'password'
+  }, {
+    label: 'Password Confirmation',
+    type: 'passwordConfirmation',
+    name: 'passwordConfirmation'
+  }, {
     label: 'Phone Number',
     type: 'number',
     name: 'phone'

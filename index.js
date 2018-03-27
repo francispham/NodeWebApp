@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Client');
 require('./services/passport');
 
 // MIDDLEWARE
@@ -20,6 +21,7 @@ app.use(
   })
 );
 
+// SERVICES
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -27,6 +29,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 
+// FOR PRODUCTION
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
   // like our main.js file, or main.css file!
