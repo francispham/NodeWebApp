@@ -6,7 +6,7 @@ const Landing = () => {
       <h1>
         The Home Page of Stmedi Spa
       </h1>
-      Collect feedback form your users
+      
     </div>
   );
 };

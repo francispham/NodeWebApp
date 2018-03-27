@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const ServiceSchema = require('./Service')
 
 const clientSchema = new Schema ({
   marketing: String,
@@ -11,8 +10,8 @@ const clientSchema = new Schema ({
   age: Number,
   address: String,
   postalCode: String,
-  services: [ServiceSchema],
-  create_at: Date
+  create_at: Date,
+  _user: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 mongoose.model('clients', clientSchema);

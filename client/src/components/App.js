@@ -8,7 +8,7 @@ import Dashboard from './Dashboard';
 import ClientNew from './clients/ClientNew';
 
 
-const SurveyNew = () => <h2>SurveyNew</h2>
+const ServicesPage = () => <h2>Services Page</h2>
 
 class App extends Component {
   componentDidMount() {
@@ -23,7 +23,7 @@ class App extends Component {
             <Header/>
             <Route exact path="/" component={Landing}/>
             <Route exact path="/clients" component={Dashboard}/>
-            <Route path="/surveys/new" component={SurveyNew}/>
+            <Route path="/services/" component={ServicesPage}/>
             <Route path="/clients/new" component={ClientNew}/>
           </div>
         </BrowserRouter>

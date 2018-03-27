@@ -3,9 +3,10 @@ import _ from 'lodash';
 import React from 'react';
 import {connect} from 'react-redux';
 import formFields from './formFields';
+import { withRouter } from 'react-router-dom';
 import  * as actions from '../../actions';
 
-const ClientFormReview = ({onCancel, formValues, submitClient}) => {
+const ClientFormReview = ({onCancel, formValues, submitClient, history}) => {
   const reviewFields = _.map(formFields, ({name, label}) => {
     return (<div key={name}>
       <label>{label}</label>
@@ -24,10 +25,10 @@ const ClientFormReview = ({onCancel, formValues, submitClient}) => {
         Back
       </button>
       <button
-        onClick={() => submitClient(formValues)}
-        type="submit" className="red btn-flat right white-text">
+        onClick={() => submitClient(formValues, history)}
+        type="Services" className="red btn-flat right white-text">
         Submit
-        <i className="material-icons right">email</i>
+        <i className="material-icons right">arrow_forward</i>
       </button>
     </div>
   </div>);
@@ -37,4 +38,4 @@ function mapStateToProps(state) {
   return {formValues: state.form.clientForm.values};
 }
 
-export default connect(mapStateToProps, actions)(ClientFormReview);
+export default connect(mapStateToProps, actions)(withRouter(ClientFormReview));
