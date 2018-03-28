@@ -5,8 +5,9 @@ const Client = mongoose.model('clients');
 
 module.exports = app => {
   app.get('/api/clients', requireLogin, async (req, res) => {
-    const clients = await Client.find({ _user: req.user.id });
-
+    // To get only clients belong to current user
+    // const clients = await Client.find({ _user: req.user.id });
+    const clients = await Client.find()
     res.send(clients);
   })
 
