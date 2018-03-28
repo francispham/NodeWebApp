@@ -1,5 +1,6 @@
 // ClientNew shows ClientForm and ClientFormReview
 import React, { Component } from 'react';
+import { reduxForm } from 'redux-form';
 import ClientForm from './ClientForm';
 import ClientFormReview from './ClientFormReview';
 
@@ -33,4 +34,6 @@ class ClientNew extends Component {
   }
 }
 
-export default ClientNew;
+export default reduxForm({
+  form: 'clientForm'
+})(ClientNew);
