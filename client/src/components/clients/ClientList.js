@@ -7,7 +7,7 @@ class ClientList extends Component {
     this.props.fetchClients();
   }
   renderClients() {
-    return this.props.clients.map(client => {
+    return this.props.clients.reverse().map(client => {
       return (
         <div className="card darken-1" key={client._id}>
           <div className="card-content">
@@ -16,7 +16,7 @@ class ClientList extends Component {
               {client.email}
             </p>
             <p className="right">
-              Created by: {new Date(client.dateSent).toLocaleDateString()}
+              Created by: {new Date(client.create_at).toLocaleDateString()}
             </p>
           </div>
         </div>
