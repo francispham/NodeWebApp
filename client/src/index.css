@@ -1,41 +1,45 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
+  width: 100%;
   display: block;
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   background-color: lightblue;
 }
 nav {
+  position: fixed;
+  top: 0;
   border-color: rgba(255,255,255,.3);
   background-color: transparent;
   min-height: 50px;
   border: 1px solid transparent;
-  margin-bottom: -30px;
+  z-index: 1030;
 }
 header {
-  position: relative;
   width: 100%;
-  text-align: center;
-  color: #fff;
-  background-color: #C0D6D6;
+  color: black;
+  background-color: lightblue;
   background-size: cover;
   /* background-image: url(../img/header.jpg); */
   background-position: center;
-  height: -webkit-fill-available
-}
-/* @media (min-width: 768px)
-header {
-    min-height: 100%;
-} */
-section {
-  padding: 100px 0;
+  height: -webkit-fill-available;
 }
 
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 5em;
+}
+header div {
+
+
+}
+section {
+  padding: 100px 0;
 }

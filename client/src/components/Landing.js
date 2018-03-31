@@ -3,10 +3,13 @@ import React from 'react';
 const Landing = () => {
   return (
     <div style={{ textAlign: 'center' }}>
-      <header>
-        <h1>
-          The Home Page of Stmedi Spa
-        </h1>
+      <header class="container">
+        <div>
+          <img src="/images/logo.png" /> <br />
+          <p><strong>
+            It’s time to take the next step in your healthy & beauty.</strong></p>
+
+        </div>
       </header>
 
       <section id="about">

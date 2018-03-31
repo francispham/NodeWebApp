@@ -31,7 +31,7 @@ class NavBar extends Component {
             to={this.props.auth ? '/clients' : '/'}
             className="left brand-logo"
           >
-            Stmedi Spa
+            StMedi Spa
           </Link>
           <ul className="right">
             {this.renderContent()}

@@ -25,7 +25,7 @@ class ClientList extends Component {
   }
   render() {
     return (
-      <div>
+      <div class="container">
         {this.renderClients()}
       </div>
     );
