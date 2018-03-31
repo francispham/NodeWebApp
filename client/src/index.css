@@ -9,6 +9,7 @@ body {
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   background-color: lightblue;
+  background-image: url(/images/tweed_@2X.png);
 }
 nav {
   position: fixed;
@@ -19,12 +20,16 @@ nav {
   border: 1px solid transparent;
   z-index: 1030;
 }
+nav img{
+  height: 50px;
+  width: 100px
+}
 header {
-  width: 100%;
+  width: 100% !important;
   color: black;
   background-color: lightblue;
   background-size: cover;
-  /* background-image: url(../img/header.jpg); */
+  background-image: url(/images/header.jpg);
   background-position: center;
   height: -webkit-fill-available;
 }
@@ -36,10 +41,18 @@ header {
   flex-direction: column;
   padding-top: 5em;
 }
+
 header div {
 
 
 }
 section {
   padding: 100px 0;
+}
+
+#services-list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  /* grid-template-rows: 50px 50px 50px 50px; */
 }

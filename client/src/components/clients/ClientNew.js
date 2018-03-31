@@ -27,7 +27,7 @@ class ClientNew extends Component {
 
   render() {
     return (
-      <div class="container">
+      <div className="container">
         {this.renderContent()}
       </div>
     );
