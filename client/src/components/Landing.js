@@ -3,7 +3,7 @@ import React from 'react';
 const Landing = () => {
   return (
     <div style={{ textAlign: 'center' }}>
-      <header className="container">
+      <header className="box">
         <div>
           <img src="/images/logo-web.png" /> <br />
           <p><strong>
@@ -12,31 +12,34 @@ const Landing = () => {
         </div>
       </header>
 
-      <section id="about">
-        <p>This is about section</p>
-      </section>
+      <div id="landing1">
+        <section id="about">
+          <p>This is about section</p>
+        </section>
 
-      <section id="services">
-        <div>
-          <p>This is services section</p>
-        </div>
+        <section id="services">
+          <div>
+            <p>This is services section</p>
+          </div>
 
-        <div id="services-list">
-          <div>Teeth</div>
-          <div>Lazer</div>
-          <div>Inject</div>
-          <div>Chemical</div>
-        </div>
-      </section>
+          <div id="services-list">
+            <div>Teeth</div>
+            <div>Lazer</div>
+            <div>Inject</div>
+            <div>Chemical</div>
+          </div>
+        </section>
+      </div>
 
-      <section id="portfolio">
-        <p>This is portfolio section</p>
-      </section>
+      <div id="landing2">
+        <section id="portfolio">
+          <p>This is portfolio section</p>
+        </section>
 
-      <section id="contact">
-        <p>This is contact section</p>
-      </section>
-
+        <section id="contact">
+          <p>This is contact section</p>
+        </section>
+      </div>
     </div>
   );
 };

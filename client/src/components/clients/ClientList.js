@@ -25,7 +25,7 @@ class ClientList extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="box">
         {this.renderClients()}
       </div>
     );
