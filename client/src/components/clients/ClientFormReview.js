@@ -5,31 +5,32 @@ import {connect} from 'react-redux';
 import formFields from './formFields';
 import { withRouter } from 'react-router-dom';
 import  * as actions from '../../actions';
+import { Button} from 'react-bootstrap';
 
 const ClientFormReview = ({onCancel, formValues, submitClient, history}) => {
   const reviewFields = _.map(formFields, ({name, label}) => {
-    return (<div key={name}>
-      <label>{label}</label>
-      <div>
-        {formValues[name]}
+    return (
+      <div className="buttons" key={name}>
+        <label>{label}</label>
+        <div>
+          {formValues[name]}
+        </div>
       </div>
-    </div>);
+    );
   });
 
-  return (<div className="container">
-    <h5>Please confirm your entries</h5>
+  return (<div className="form">
+    <h3>Please confirm your entries</h3>
     {reviewFields}
-    <div>
-
-      <button className="red btn-flat white-text" onClick={onCancel}>
+    <div className="buttons" >
+      <Button bsStyle="danger" onClick={onCancel}>
         Back
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => submitClient(formValues, history)}
-        type="Services" className="red btn-flat right white-text">
+        type="Services" bsStyle="success">
         Submit
-        <i className="material-icons right">arrow_forward</i>
-      </button>
+      </Button>
     </div>
   </div>);
 };

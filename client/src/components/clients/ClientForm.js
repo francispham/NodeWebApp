@@ -5,7 +5,7 @@ import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
 import ClientField from './ClientField';
 import formFields from './formFields';
-
+import { Button} from 'react-bootstrap';
 
 
 
@@ -27,17 +27,21 @@ class ClientForm extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="box">
+
         <form onSubmit={this.props.handleSubmit(this.props.onClientSubmit)}>
+          <h3>Personal Information:</h3><br/>
           {this.renderFields()}
-          <div>
-            <Link to="/clients" className="red btn-flat white-text">
+          <div className="buttons">
+            <Button bsStyle="danger">
+              <Link to="/clients">
               Cancel
-            </Link>
-            <button type="submit" className="red btn-flat right white-text">
+              </Link>
+            </Button>
+
+            <Button bsStyle="success" type="submit">
               Next
-              <i className="material-icons right">done</i>
-            </button>
+            </Button>
           </div>
         </form>
       </div>

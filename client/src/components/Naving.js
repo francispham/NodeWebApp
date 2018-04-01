@@ -20,6 +20,9 @@ class Naving extends Component {
           <NavItem eventKey={1}>
             <Payments />
           </NavItem>,
+          <NavItem eventKey={2}>
+            Treatments: {this.props.auth.treatments}
+          </NavItem>,
           <NavItem eventKey={3} href="/api/logout">
             Loggout
           </NavItem>
