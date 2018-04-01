@@ -27,7 +27,7 @@ class ClientNew extends Component {
 
   render() {
     return (
-      <div>
+      <div className="box" style={{padding:'60px'}}>
         {this.renderContent()}
       </div>
     );
