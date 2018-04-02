@@ -1,13 +1,13 @@
 import  React from 'react';
-import { Link } from 'react-router-dom';
 import ClientList from './clients/ClientList';
-import { Button, ButtonToolbar } from 'react-bootstrap'
-/*
+import { Button } from 'react-bootstrap'
+
 const Dashboard = () => {
   return (
     <div className="container-fluid" style={{padding:'60px'}}>
       <h3>Client List</h3>
       <ClientList />
+      <br/>
       <div style={{ textAlign: 'center' }}>
         <Button bsStyle="success" bsSize="small" href="/clients/new">
         Add Client
@@ -16,12 +16,11 @@ const Dashboard = () => {
     </div>
   );
 };
-*/
 
+/*
 class Dashboard extends React.Component {
   constructor(props, context) {
     super(props, context);
-    console.log(props)
     this.state = {
       lgShow: false
     };
@@ -31,6 +30,7 @@ class Dashboard extends React.Component {
     return (
       <div className="container-fluid" style={{padding:'60px'}}>
         <h3>Client List</h3>
+        <ClientList />
         <ButtonToolbar >
           <Button
             bsStyle="primary"
@@ -49,5 +49,18 @@ class Dashboard extends React.Component {
     );
   }
 }
-
+*/
 export default Dashboard;
+
+
+
+
+
+
+
+
+
+
+
+
+//

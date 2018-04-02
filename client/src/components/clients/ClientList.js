@@ -1,45 +1,47 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchClients } from '../../actions';
-import { Modal, Button } from 'react-bootstrap'
+import ClientDetails from './ClientDetails'
+import { Modal, Button, ButtonToolbar } from 'react-bootstrap'
 
 class ClientList extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      lgShow: false,
+      client: []
+    };
+    this.renderClients = this.renderClients.bind(this)
+  }
+
   componentDidMount() {
     this.props.fetchClients();
+    const {client} = this.state
   }
+
   renderClients() {
+    const {client} = this.state
+    let lgClose = () => this.setState({ lgShow: false, client: client });
     return this.props.clients.reverse().map(client => {
       return (
-        <Modal
-          className="box"
-          {...this.props}
-          key={client._id}
-          bsSize="large"
-          aria-labelledby="contained-modal-title-lg">
+        <ButtonToolbar>
+          <Button
 
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-lg">{client.name}</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>
-            <p>{client.email}</p>
-            <p>{client.phone}</p>
-            <p>{client.address}</p>
-            <p>Created by: {new Date(client.create_at).toLocaleDateString()}</p>
-          </Modal.Body>
-
-          <Modal.Footer>
-            <Button onClick={this.props.onHide}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-
+            bsStyle="primary"
+            onClick={() => this.setState({ lgShow: true })}
+          >
+            {client.name}
+          </Button>
+            {/* <ClientDetails show={this.state.lgShow} onHide={lgClose} /> */}
+          </ButtonToolbar>
       )
     })
   };
 
+
   render() {
     return (
-      <div className="box">
+      <div className='grid-list'>
         {this.renderClients()}
       </div>
     );
