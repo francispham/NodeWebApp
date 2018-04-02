@@ -11,19 +11,19 @@ class Naving extends Component {
         return;
       case false:
         return (
-          <NavItem eventKey={1} href="/auth/google">
+          <NavItem key={1} href="/auth/google">
             Login with Google
           </NavItem>
         )
       default:
         return [
-          <NavItem eventKey={1}>
+          <NavItem key={1}>
             <Payments />
           </NavItem>,
-          <NavItem eventKey={2}>
+          <NavItem key={2}>
             Treatments: {this.props.auth.treatments}
           </NavItem>,
-          <NavItem eventKey={3} href="/api/logout">
+          <NavItem key={3} href="/api/logout">
             Loggout
           </NavItem>
         ]
@@ -34,14 +34,12 @@ class Naving extends Component {
     return (
       <Navbar fixedTop collapseOnSelect className="nav">
         <Navbar.Header>
-
             <Link
               to={this.props.auth ? '/clients' : '/'}
               className="left brand-logo"
             >
               <img className="logo" src="/images/logo.png"/>
             </Link>
-
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
