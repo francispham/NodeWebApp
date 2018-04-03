@@ -1,10 +1,9 @@
-// ClientNew shows ClientForm and ClientFormReview
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
-import ClientForm from './ClientForm';
-import ClientFormReview from './ClientFormReview';
+import ServiceForm from './ServiceForm';
+import ServiceFormReview from './ServiceFormReview';
 
-class ClientNew extends Component {
+class ServiceNew extends Component {
   state = { showFormReview: false };
 /* Same as below: 👇
   constructor(props) {
@@ -15,13 +14,13 @@ class ClientNew extends Component {
 */
   renderContent() {
     if (this.state.showFormReview) {
-      return <ClientFormReview
+      return <ServiceFormReview
               onCancel={() => this.setState({ showFormReview: false })}
             />;
     }
 
-    return <ClientForm
-            onClientSubmit={() => this.setState({ showFormReview: true })}
+    return <ServiceForm
+            onServiceSubmit={() => this.setState({ showFormReview: true })}
           />
   }
 
@@ -35,5 +34,5 @@ class ClientNew extends Component {
 }
 
 export default reduxForm({
-  form: 'clientForm'
-})(ClientNew);
+  form: 'serviceForm'
+})(ServiceNew);
