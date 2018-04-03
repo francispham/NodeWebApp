@@ -5,10 +5,9 @@ import * as actions from '../actions';
 import Naving from './Naving';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
+import Services from './Services';
 import ClientNew from './clients/ClientNew';
 
-
-const ServicesPage = () => <h2>Services Page</h2>
 
 class App extends Component {
   componentDidMount() {
@@ -23,7 +22,7 @@ class App extends Component {
             <Naving/>
             <Route exact path="/" component={Landing}/>
             <Route exact path="/clients" component={Dashboard}/>
-            <Route path="/services/" component={ServicesPage}/>
+            <Route path="/services/" component={Services}/>
             <Route path="/clients/new" component={ClientNew}/>
           </div>
         </BrowserRouter>

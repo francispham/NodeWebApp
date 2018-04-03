@@ -4,7 +4,8 @@ const { Schema } = mongoose;
 const treatmentSchema = new Schema ({
   create_at: Date,
   clientSign: String,
-  aestheticianSign: string
+  userSign: String,
+  _service: {type: Schema.Types.ObjectId, ref: 'Service' }
 });
 
 module.exports = treatmentSchema;

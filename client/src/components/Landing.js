@@ -22,7 +22,7 @@ const Landing = () => {
             <p>This is services section</p>
           </div>
 
-          <div id="services-list">
+          <div className="grid-list">
             <div>Teeth</div>
             <div>Lazer</div>
             <div>Inject</div>

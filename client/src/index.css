@@ -41,10 +41,20 @@ form {
   flex-direction: column;
   /* padding-top: 5em; */
 }
+
 .buttons{
   display: flex;
   justify-content: space-between;
 }
+
+.grid-list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  grid-gap: 1em
+  /* grid-template-rows: 50px 50px 50px 50px; */
+}
+
 #landing1{
   height: 960px;
 }
@@ -55,12 +65,6 @@ form {
 }
 #services{
   height: 70%;
-}
-#services-list{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: stretch;
-  /* grid-template-rows: 50px 50px 50px 50px; */
 }
 
 #landing2{
