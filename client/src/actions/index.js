@@ -33,3 +33,8 @@ export const fetchClients = () => async dispatch => {
 
     dispatch({type: FETCH_CLIENTS, payload: res.data });
 }
+export const fetchServices = () => async dispatch => {
+  const res = await axios.get('/api/services');
+
+    dispatch({type: FETCH_SERVICES, payload: res.data });
+}

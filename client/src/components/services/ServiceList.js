@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchClients } from '../../actions';
+import { fetchServices } from '../../actions';
 import { Modal, Button, ButtonToolbar } from 'react-bootstrap'
 
-class ClientList extends Component {
+/*NEEDS:
+  - List of services*/
+class ServiceList extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
       show: false,
-      client: []
+      service: []
     };
     this.handleShow = this.handleShow.bind(this);
     this.handleHide = this.handleHide.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchClients().then(clients => {
-      this.setState({clients: clients, show:false})
+    this.props.fetchServices().then(services => {
+      this.setState({services: services, show:false})
     });
 
   }
@@ -30,15 +32,15 @@ class ClientList extends Component {
     }
 
   render() {
-    const {client} = this.state
-    return this.props.clients.reverse().map(client => {
+    const {service} = this.state
+    return this.props.services.reverse().map(service => {
       return (
-        <ButtonToolbar  key={client._id}>
+        <ButtonToolbar  key={service._id}>
           <Button
-            key={client.name}
+            key={service.name}
             bsStyle="primary"
             onClick={this.handleShow}>
-          {client.name}
+          {service.name}
           </Button>
           <Modal
             {...this.props}
@@ -48,14 +50,14 @@ class ClientList extends Component {
             dialogClassName="custom-modal"
           >
             <Modal.Header closeButton="closeButton">
-              <Modal.Title id="contained-modal-title-lg">{client.name}</Modal.Title>
+              <Modal.Title id="contained-modal-title-lg">{service.name}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-              <p>{client.email}</p>
-              <p>{client.phone}</p>
-              <p>{client.address}</p>
-              <p>Created by: {new Date(client.create_at).toLocaleDateString()}</p>
+              <p>{service.email}</p>
+              <p>{service.phone}</p>
+              <p>{service.address}</p>
+              <p>Created by: {new Date(service.create_at).toLocaleDateString()}</p>
             </Modal.Body>
 
             <Modal.Footer>
@@ -68,8 +70,8 @@ class ClientList extends Component {
   };
 };
 
-function mapStateTopProps({ clients }) {
-  return { clients };
+function mapStateTopProps({ services }) {
+  return { services };
 };
 
-export default connect(mapStateTopProps, { fetchClients }) (ClientList);
+export default connect(mapStateTopProps, { fetchServices }) (ServiceList);

@@ -3,7 +3,7 @@ import _ from 'lodash';
 import React from 'react';
 import {connect} from 'react-redux';
 import formFields from './formFields';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import  * as actions from '../../actions';
 import { Button} from 'react-bootstrap';
 
@@ -29,7 +29,9 @@ const ClientFormReview = ({onCancel, formValues, submitClient, history}) => {
       <Button
         onClick={() => submitClient(formValues, history)}
         type="Services" bsStyle="success">
-        Add Services
+        <Link to="/services">
+          Add Services
+        </Link>
       </Button>
     </div>
   </div>);

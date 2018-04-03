@@ -5,14 +5,14 @@ import { Button } from 'react-bootstrap'
 const Services = () => {
   return (
     <div className="container-fluid" style={{padding:'60px'}}>
-      <h3>Client List</h3>
+      <h3>Service List</h3>
       <div className="grid-list">
         <ServiceList />
       </div>
       <br/>
       <div style={{ textAlign: 'center' }}>
         <Button bsStyle="success" bsSize="small" href="/services/new">
-        Add Client
+        Add Service
         </Button>
       </div>
     </div>
