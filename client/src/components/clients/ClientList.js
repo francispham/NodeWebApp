@@ -60,6 +60,7 @@ class ClientList extends Component {
 
             <Modal.Footer>
               <Button onClick={this.handleHide}>Close</Button>
+              <Button>Add Services</Button>
             </Modal.Footer>
           </Modal>
         </ButtonToolbar>

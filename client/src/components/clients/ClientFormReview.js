@@ -29,7 +29,7 @@ const ClientFormReview = ({onCancel, formValues, submitClient, history}) => {
       <Button
         onClick={() => submitClient(formValues, history)}
         type="Services" bsStyle="success">
-        Submit
+        Add Services
       </Button>
     </div>
   </div>);
