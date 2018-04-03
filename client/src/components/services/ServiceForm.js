@@ -1,22 +1,22 @@
-// ClientForm shows a form for a user to add input
+service// ServiceForm shows a form for a user to add input
 import _ from 'lodash';
 import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
-import ClientField from './ClientField';
+import ServiceField from './ServiceField';
 import formFields from './formFields';
 import { Button } from 'react-bootstrap';
 
 
 
-class ClientForm extends Component {
+class ServiceForm extends Component {
 
   renderFields() {
     return _.map(formFields, ({ label, type, name }) => {
       return (
         <Field
           key={name}
-          component={ClientField}
+          component={ServiceField}
           type={type}
           label={label}
           name={name}
@@ -29,12 +29,12 @@ class ClientForm extends Component {
     return (
       <div className="box">
 
-        <form onSubmit={this.props.handleSubmit(this.props.onClientSubmit)}>
+        <form onSubmit={this.props.handleSubmit(this.props.onServiceSubmit)}>
           <h3>Personal Information:</h3><br/>
           {this.renderFields()}
           <div className="buttons">
             <Button bsStyle="danger">
-              <Link to="/clients">
+              <Link to="/services">
               Cancel
               </Link>
             </Button>
@@ -62,6 +62,6 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: 'clientForm',
+  form: 'serviceForm',
   destroyOnUnmount: false
-})(ClientForm);
+})(ServiceForm);

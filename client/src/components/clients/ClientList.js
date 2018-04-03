@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchClients } from '../../actions';
 import { Modal, Button, ButtonToolbar } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 class ClientList extends Component {
   constructor(props, context) {
@@ -60,6 +61,11 @@ class ClientList extends Component {
 
             <Modal.Footer>
               <Button onClick={this.handleHide}>Close</Button>
+              <Button>
+                <Link to="/services">
+                  Add Services
+                </Link>
+             </Button>
             </Modal.Footer>
           </Modal>
         </ButtonToolbar>
