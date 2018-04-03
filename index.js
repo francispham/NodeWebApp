@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
 require('./models/Client');
+require('./models/Service');
 require('./services/passport');
 
 // MIDDLEWARE
@@ -29,6 +30,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/clientRoutes')(app);
+require('./routes/serviceRoutes')(app);
 
 // FOR PRODUCTION
 if (process.env.NODE_ENV === 'production') {

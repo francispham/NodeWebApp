@@ -6,7 +6,9 @@ const Dashboard = () => {
   return (
     <div className="container-fluid" style={{padding:'60px'}}>
       <h3>Client List</h3>
-      <ClientList />
+      <div className="grid-list">
+        <ClientList />
+      </div>
       <br/>
       <div style={{ textAlign: 'center' }}>
         <Button bsStyle="success" bsSize="small" href="/clients/new">

@@ -1,50 +1,70 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchClients } from '../../actions';
-import ClientDetails from './ClientDetails'
 import { Modal, Button, ButtonToolbar } from 'react-bootstrap'
 
 class ClientList extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      lgShow: false,
+      show: false,
       client: []
     };
-    this.renderClients = this.renderClients.bind(this)
+    this.handleShow = this.handleShow.bind(this);
+    this.handleHide = this.handleHide.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchClients();
-    const {client} = this.state
+    this.props.fetchClients().then(clients => {
+      this.setState({clients: clients, show:false})
+    });
+
   }
 
-  renderClients() {
-    const {client} = this.state
-    let lgClose = () => this.setState({ lgShow: false, client: client });
-    return this.props.clients.reverse().map(client => {
-      return (
-        <ButtonToolbar>
-          <Button
+  handleShow() {
+      this.setState({ show: true });
+    }
 
-            bsStyle="primary"
-            onClick={() => this.setState({ lgShow: true })}
-          >
-            {client.name}
-          </Button>
-            {/* <ClientDetails show={this.state.lgShow} onHide={lgClose} /> */}
-          </ButtonToolbar>
-      )
-    })
-  };
-
+    handleHide() {
+      this.setState({ show: false });
+    }
 
   render() {
-    return (
-      <div className='grid-list'>
-        {this.renderClients()}
-      </div>
-    );
+    const {client} = this.state
+    return this.props.clients.reverse().map(client => {
+      return (
+        <ButtonToolbar  key={client._id}>
+          <Button
+            key={client.name}
+            bsStyle="primary"
+            onClick={this.handleShow}>
+          {client.name}
+          </Button>
+          <Modal
+            {...this.props}
+            bsSize="large"
+            show={this.state.show}
+            onHide={this.handleHide}
+            dialogClassName="custom-modal"
+          >
+            <Modal.Header closeButton="closeButton">
+              <Modal.Title id="contained-modal-title-lg">{client.name}</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <p>{client.email}</p>
+              <p>{client.phone}</p>
+              <p>{client.address}</p>
+              <p>Created by: {new Date(client.create_at).toLocaleDateString()}</p>
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button onClick={this.handleHide}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+        </ButtonToolbar>
+      )
+    })
   };
 };
 
