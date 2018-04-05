@@ -17,21 +17,20 @@ const Landing = () => {
           <p>This is about section</p>
         </section>
 
-        <section id="services">
-          <div>
-            <p>This is services section</p>
-          </div>
-
-          <div className="grid-list">
+        <section className="grid-list" id="services">
             <div>Teeth</div>
             <div>Lazer</div>
             <div>Inject</div>
             <div>Chemical</div>
-          </div>
         </section>
       </div>
 
       <div id="landing2">
+        <div style={{float: 'left', width: '50%'}}>I'm on the left</div>
+        <div style={{float: 'right', width: '50%'}}>I'm on the right</div>
+      </div>
+
+      <div >
         <section id="portfolio">
           <p>This is portfolio section</p>
         </section>

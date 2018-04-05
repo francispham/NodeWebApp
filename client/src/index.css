@@ -25,6 +25,7 @@ form {
   margin: 60px;
 }
 
+
 .nav {
   background-color: transparent !important;
 }
@@ -39,7 +40,6 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* padding-top: 5em; */
 }
 
 .buttons{
@@ -49,31 +49,41 @@ form {
 
 .grid-list{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 5fr);
   align-items: stretch;
-  grid-gap: 1em
+  grid-gap: 1em;
   /* grid-template-rows: 50px 50px 50px 50px; */
 }
 
-#landing1{
-  height: 960px;
+.clients{
+  border: 1px solid;
 }
 
-#about{
-  background-color: lightblue;
-  height: 30%;
+#landing1{
+
 }
+
+
+#about{
+  background-size: cover;
+  background-image: url(/images/about.jpg);
+  height: auto;
+  height: 70vh;
+}
+
 #services{
-  height: 70%;
+  height: 40vh;
 }
 
 #landing2{
-  height: 960px;
+  height: 50vh;
+  background-image: url(/images/landing2.jpg);
 }
 #portfolio{
   background-color: lightblue;
-  height: 80%;
+  height: 70vh;
 }
 #contact{
-  height: 20%;
+  height: 30vh;
+  background-color: rgb(125, 119, 119);
 }

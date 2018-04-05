@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
-
 const Client = mongoose.model('clients');
 
 module.exports = app => {
@@ -9,6 +8,11 @@ module.exports = app => {
     // const clients = await Client.find({ _user: req.user.id });
     const clients = await Client.find()
     res.send(clients);
+  })
+
+  app.get('/api/clients/:client_id', requireLogin, async (req, res) => {
+    const client = await Client.findById(req.params.client_id)
+    res.send(client);
   })
 
   app.post('/api/clients', requireLogin, async(req, res) => {

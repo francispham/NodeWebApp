@@ -5,7 +5,7 @@ import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
 import ClientField from './ClientField';
 import formFields from './formFields';
-import { Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 
 

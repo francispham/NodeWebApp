@@ -7,6 +7,7 @@ import Landing from './Landing';
 import Dashboard from './Dashboard';
 import Services from './Services';
 import ClientNew from './clients/ClientNew';
+import ServiceNew from './services/ServiceNew';
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/clients" component={Dashboard}/>
             <Route path="/services/" component={Services}/>
             <Route path="/clients/new" component={ClientNew}/>
+            <Route path="/services/new" component={ServiceNew}/>
           </div>
         </BrowserRouter>
       </div>

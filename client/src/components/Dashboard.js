@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <div className="container-fluid" style={{padding:'60px'}}>
       <h3>Client List</h3>
-      <div className="grid-list">
+      <div>
         <ClientList />
       </div>
       <br/>
