@@ -23,8 +23,8 @@ class App extends Component {
             <Naving/>
             <Route exact path="/" component={Landing}/>
             <Route exact path="/clients" component={Dashboard}/>
-            <Route path="/services/" component={Services}/>
-            <Route path="/clients/new" component={ClientNew}/>
+            <Route exact path="/services/" component={Services}/>
+            <Route exact path="/clients/new" component={ClientNew}/>
             <Route path="/services/new" component={ServiceNew}/>
           </div>
         </BrowserRouter>
