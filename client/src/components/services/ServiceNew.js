@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
-import ServiceForm from './ServiceForm';
-import ServiceFormReview from './ServiceFormReview';
+// import ServiceForm from './ServiceForm';
+import WizardForm from './WizardForm';
+// import ServiceFormReview from './ServiceFormReview';
+import WizardFormReview from './WizardFormReview';
 
 class ServiceNew extends Component {
   state = { showFormReview: false };
@@ -14,12 +16,14 @@ class ServiceNew extends Component {
 */
   renderContent() {
     if (this.state.showFormReview) {
-      return <ServiceFormReview
+      // return <ServiceFormReview
+      return <WizardFormReview
               onCancel={() => this.setState({ showFormReview: false })}
             />;
     }
 
-    return <ServiceForm
+    // return <ServiceForm
+    return <WizardForm
             onServiceSubmit={() => this.setState({ showFormReview: true })}
           />
   }
@@ -34,5 +38,6 @@ class ServiceNew extends Component {
 }
 
 export default reduxForm({
-  form: 'serviceForm'
+  // form: 'serviceForm'
+  form: 'wizardForm'
 })(ServiceNew);

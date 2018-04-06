@@ -2,41 +2,55 @@ import React from 'react';
 
 const Landing = () => {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header className="box">
+    <div style={{ textAlign: 'center' }} id="scroll-container">
+      <header className="box scroll-page">
         <div>
           <img src="/images/logo-web.png" /> <br />
           <p><strong>
             It’s time to take the next step in your healthy & beauty.</strong></p>
-
         </div>
       </header>
 
-      <div id="landing1">
+      <div>
         <section id="about">
-          <p>This is about section</p>
+          <p><strong>Our Story</strong> </p>
         </section>
 
-        <section className="grid-list" id="services">
-            <div>Teeth</div>
-            <div>Lazer</div>
-            <div>Inject</div>
-            <div>Chemical</div>
+        <section  id="services">
+          <div className="grid-list" style={{paddingTop:'2.5em'}} >
+            <div id="fade"><strong>Teeth</strong></div>
+            <div id="fade"><strong>Lazer</strong></div>
+            <div id="fade"><strong>Inject</strong></div>
+            <div id="fade"><strong>Chemical</strong></div>
+          </div>
         </section>
       </div>
 
-      <div id="landing2">
-        <div style={{float: 'left', width: '50%'}}>I'm on the left</div>
-        <div style={{float: 'right', width: '50%'}}>I'm on the right</div>
+      <div id="special">
+        <div>Special Offers</div>
+        <div style={{float: 'left', width: '50%', padding: '1em'}}>
+          <div id="fade">
+
+          </div>
+        </div>
+        <div style={{float: 'right', width: '50%', padding: '1em'}}>
+          <div id="fade">
+
+          </div>
+        </div>
       </div>
 
       <div >
-        <section id="portfolio">
-          <p>This is portfolio section</p>
-        </section>
+        <section id="feedback">
+          <div style={{height: '60vh', padding: '3em'}}>
+            <div id="fade" style={{height: '60vh', padding: '3em'}} >
 
-        <section id="contact">
-          <p>This is contact section</p>
+              <h2>What's people say?</h2>
+            </div>
+          </div>
+        </section>
+        <section className="scroll-page" id="contact">
+          <h3>Contact</h3>
         </section>
       </div>
     </div>
