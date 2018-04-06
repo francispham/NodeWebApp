@@ -33,9 +33,9 @@ class Naving extends Component {
   render () {
     return (
       <Navbar fixedTop collapseOnSelect className="nav">
-        <Navbar.Header>
+        <Navbar.Header >
             <Link
-              to={this.props.auth ? '/clients' : '/'}
+              to="/"
               className="left brand-logo"
             >
               <img className="logo" src="/images/logo.png"/>
@@ -43,21 +43,31 @@ class Naving extends Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          {/* <Nav>
-            <NavItem eventKey={1} href="#">
-              Link
+          <Nav>
+            <NavItem eventKey={1} className="page-scroll" href="#contact">
+              Contact
             </NavItem>
-            <NavItem eventKey={2} href="#">
-              Link
+            <NavItem eventKey={2} className="page-scroll" href="#services">
+              Services
             </NavItem>
             <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
+              <MenuItem eventKey={3.1}><Link
+                to={this.props.auth ? '/clients' : '/'}
+              >
+                Client List
+              </Link></MenuItem>
+              <MenuItem eventKey={3.2}>
+                <Link to={this.props.auth ? '/services' : '/'}> Service List</Link>
+              </MenuItem>
               <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
+              <MenuItem eventKey={3.3}>
+                <Link to={this.props.auth ? '/clients/new' : '/'}>New Client</Link>
+              </MenuItem>
+              <MenuItem eventKey={3.4}>
+                <Link to={this.props.auth ? '/services/new' : '/'}>New Service</Link>
+              </MenuItem>
             </NavDropdown>
-          </Nav> */}
+          </Nav>
           <Nav pullRight>
             {this.renderContent()}
           </Nav>
