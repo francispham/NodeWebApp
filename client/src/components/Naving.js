@@ -32,7 +32,8 @@ class Naving extends Component {
 
   render () {
     return (
-      <Navbar fixedTop collapseOnSelect className="nav">
+      <Navbar fixedTop collapseOnSelect className="nav" id="myNav">
+
         <Navbar.Header >
             <Link
               to="/"

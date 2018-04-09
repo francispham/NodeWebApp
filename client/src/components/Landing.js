@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Row, Col } from 'react-bootstrap'
 
 const Landing = () => {
   return (
@@ -16,13 +17,16 @@ const Landing = () => {
           <p><strong>Our Story</strong> </p>
         </section>
 
-        <section  id="services">
-          <div className="grid-list" style={{paddingTop:'2.5em'}} >
-            <div id="fade"><strong>Teeth</strong></div>
-            <div id="fade"><strong>Lazer</strong></div>
-            <div id="fade"><strong>Inject</strong></div>
-            <div id="fade"><strong>Chemical</strong></div>
-          </div>
+        <section>
+          <Grid id="services">
+
+          <Row className="show-grid">
+            <Col style={{padding:"0px"}} sm ={6} md={3}><div id="fade"><strong>Teeth</strong></div></Col>
+            <Col style={{padding:"0px"}} sm ={6} md={3}><div id="fade"><strong>Lazer</strong></div></Col>
+            <Col style={{padding:"0px"}} sm ={6} md={3}><div id="fade"><strong>Inject</strong></div></Col>
+            <Col style={{padding:"0px"}} sm ={6} md={3}><div id="fade"><strong>Chemical</strong></div></Col>
+          </Row>
+        </Grid>
         </section>
       </div>
 
