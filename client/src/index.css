@@ -73,7 +73,7 @@ form {
 }
 
 #services{
-  height: 50vh;
+  height: auto;
 }
 
 #special{
@@ -82,8 +82,9 @@ form {
 }
 
 #fade{
-  height: 40vh;
-  background-color: rgb(69, 65, 89, .2)
+  height: 30vh;
+  background-color: rgb(69, 65, 89, .2);
+  margin: 1em;
 }
 
 #feedback{
