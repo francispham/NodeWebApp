@@ -21,7 +21,7 @@ Run the following commands in your terminal, after cloning the repo:
 * Express.js
 * React.js
 * Redux
-* mongoDB
+* MongoDB
 * reduxForm
 
 ## Author: Francis Pham
