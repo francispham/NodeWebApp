@@ -11,14 +11,15 @@ module.exports = app => {
   })
 
   app.post('/api/services', requireLogin, async(req, res) => {
-    const {serviceName, formDetails, treatments, _user, _client} = req.body;
-
+    const { formDetails, _user, _client} = req.body;
+    console.log(formDetails)
     const service = new Service({
-      serviceName, formDetails,
-      treatments: treatments.split(',')
-                            .map( (create_at, clientSign, userSign, _service) => ({
-                              create_at, clientSign, userSign, _service
-                            }) ),
+      // serviceName,
+      formDetails,
+      // treatments: treatments.split(',')
+      //                       .map( (create_at, clientSign, userSign, _service) => ({
+      //                         create_at, clientSign, userSign, _service
+      //                       }) ),
       _user: req.user.id,
       _client: req.client.id,
       create_at: Date.now()
@@ -26,9 +27,9 @@ module.exports = app => {
     try{
       service.save();
       const user = await req.user.save();
-      const client = await req.client.save();
+      // const client = await req.client.save();
       res.send(user);
-      res.send(client);
+      // res.send(client);
     } catch (err) {
       res.status(422).send(err);
     }

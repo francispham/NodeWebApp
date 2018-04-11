@@ -4,6 +4,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+const logger = require('morgan');
 require('./models/User');
 require('./models/Client');
 require('./models/Service');
@@ -21,6 +22,7 @@ app.use(
     keys: [keys.cookieKey]
   })
 );
+app.use(logger('dev'));
 
 // SERVICES
 app.use(passport.initialize());

@@ -39,7 +39,7 @@ class Naving extends Component {
               to="/"
               className="left brand-logo"
             >
-              <img className="logo" src="/images/logo.png"/>
+              <img className="logo" src="/images/logo.png" alt=""/>
             </Link>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -52,21 +52,21 @@ class Naving extends Component {
               Services
             </NavItem>
             <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}><Link
-                to={this.props.auth ? '/clients' : '/'}
-              >
-                Client List
-              </Link></MenuItem>
-              <MenuItem eventKey={3.2}>
+              <li role="presentation">
+                <Link role="menuitem" to={this.props.auth ? '/clients' : '/'}>
+                    Client List
+                </Link>
+              </li>
+              <li role="presentation">
                 <Link to={this.props.auth ? '/services' : '/'}> Service List</Link>
-              </MenuItem>
+              </li>
               <MenuItem divider />
-              <MenuItem eventKey={3.3}>
+              <li role="presentation">
                 <Link to={this.props.auth ? '/clients/new' : '/'}>New Client</Link>
-              </MenuItem>
-              <MenuItem eventKey={3.4}>
+              </li>
+              <li role="presentation">
                 <Link to={this.props.auth ? '/services/new' : '/'}>New Service</Link>
-              </MenuItem>
+              </li>
             </NavDropdown>
           </Nav>
           <Nav pullRight>

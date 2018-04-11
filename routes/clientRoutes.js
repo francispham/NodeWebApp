@@ -7,6 +7,7 @@ module.exports = app => {
     // To get only clients belong to current user
     // const clients = await Client.find({ _user: req.user.id });
     const clients = await Client.find()
+    // debugger
     res.send(clients);
   })
 

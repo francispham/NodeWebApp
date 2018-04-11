@@ -2,35 +2,42 @@
 import _ from 'lodash';
 import React from 'react';
 import {connect} from 'react-redux';
-// import formFields from './formFields';
+
 import WizardForm from './WizardForm';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import  * as actions from '../../actions';
 import { Button} from 'react-bootstrap';
 
 const WizardFormReview = ({onCancel, formValues, submitWizard, history}) => {
-  const reviewFields = _.map(WizardForm, ({name, label}) => {
+/*
+  const reviewFields = _.map(WizardForm, ({name, value}) => {
     return (
       <div className="buttons" key={name}>
-        <label>{label}</label>
+        This is reviewFields
         <div>
           {formValues[name]}
+        </div>
+        <div>
+          {formValues[value]}
         </div>
       </div>
     );
   });
-
+*/
   return (<div className="form">
     <h3>Please confirm your entries</h3>
     {reviewFields}
+    {JSON.stringify(formValues, null, 2)}
     <div className="buttons" >
       <Button bsStyle="danger" onClick={onCancel}>
         Back
       </Button>
       <Button
         onClick={() => submitWizard(formValues, history)}
-        type="Services" bsStyle="success">
-        Submit
+        type="submit" bsStyle="success">
+        <Link to="/clients">
+          Submit
+        </Link>
       </Button>
     </div>
   </div>);

@@ -6,7 +6,7 @@ const Landing = () => {
     <div style={{ textAlign: 'center' }} id="scroll-container">
       <header className="box scroll-page">
         <div>
-          <img src="/images/logo-web.png" /> <br />
+          <img src="/images/logo-web.png" alt=""/> <br />
           <p><strong>
             It’s time to take the next step in your healthy & beauty.</strong></p>
         </div>

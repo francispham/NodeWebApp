@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchClients} from '../../actions';
-import {Modal, Button, ButtonToolbar} from 'react-bootstrap'
+// import {Modal, Button, ButtonToolbar} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
-import ClientDetails from './ClientDetails'
+// import ClientDetails from './ClientDetails'
 
 class ClientList extends Component {
   componentDidMount() {

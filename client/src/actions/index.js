@@ -28,11 +28,16 @@ export const fetchClients = () => async dispatch => {
 export const fetchClient = () => async dispatch => {
   const res = await axios.get('/api/clients');
 
-    dispatch({type: FETCH_CLIENT, payload: res.data });
+  dispatch({type: FETCH_CLIENT, payload: res.data });
 }
+
+export const submitWizard = (values, history) => async dispatch => {
+  const res = await axios.post('/api/services', values);
+  history.push('/clients');
+  dispatch({type: FETCH_USER, payload: res.data });
+};
 
 export const fetchServices = () => async dispatch => {
   const res = await axios.get('/api/services');
-
-    dispatch({type: FETCH_SERVICES, payload: res.data });
+  dispatch({type: FETCH_SERVICES, payload: res.data });
 }
