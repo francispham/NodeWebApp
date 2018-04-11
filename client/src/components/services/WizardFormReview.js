@@ -26,7 +26,7 @@ const WizardFormReview = ({onCancel, formValues, submitWizard, history}) => {
 */
   return (<div className="form">
     <h3>Please confirm your entries</h3>
-    {reviewFields}
+    {/* {reviewFields} */}
     {JSON.stringify(formValues, null, 2)}
     <div className="buttons" >
       <Button bsStyle="danger" onClick={onCancel}>
