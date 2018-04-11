@@ -10,6 +10,7 @@ class ServiceList extends Component {
   }
 
   renderServices() {
+    console.log(this.props)
     return this.props.services.map(service => {
       return (
         <div className="services"  key={service._id}>
@@ -19,6 +20,13 @@ class ServiceList extends Component {
           </div>
           <div>
             <span>{service._user}</span>
+          </div>
+          <div>
+            <p>This is form</p> <br/>
+            {/* <span>{service}</span> */}
+          </div>
+          <div>
+            <span>-----------------------</span>
           </div>
         </div>
       </div>)

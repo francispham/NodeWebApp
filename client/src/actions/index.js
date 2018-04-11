@@ -31,8 +31,8 @@ export const fetchClient = () => async dispatch => {
   dispatch({type: FETCH_CLIENT, payload: res.data });
 }
 
-export const submitWizard = (values, history) => async dispatch => {
-  const res = await axios.post('/api/services', values);
+export const submitWizard = (formValues, history) => async dispatch => {
+  const res = await axios.post('/api/services', {formValues});
   history.push('/clients');
   dispatch({type: FETCH_USER, payload: res.data });
 };
