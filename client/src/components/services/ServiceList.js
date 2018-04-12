@@ -12,18 +12,25 @@ class ServiceList extends Component {
   renderServices() {
     console.log(this.props)
     return this.props.services.map(service => {
+      console.log(service)
       return (
         <div className="services"  key={service._id}>
          <div>
           <div>
+            <label>ID:</label>
             <span>{service._id}</span>
           </div>
           <div>
+            <label>User ID:</label>
             <span>{service._user}</span>
           </div>
-          <div>
-            <p>This is form</p> <br/>
-            {/* <span>{service}</span> */}
+          <div className="box">
+            <label>Condition:</label>
+            <span>{service.formValues.Condition}</span>
+            <label>Skin Type:</label>
+            <span>{service.formValues.SkinType}</span>
+            <label>Tan:</label>
+            <span>{service.formValues.Tan}</span>
           </div>
           <div>
             <span>-----------------------</span>

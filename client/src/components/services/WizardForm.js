@@ -13,15 +13,15 @@ class WizardForm extends Component {
         <label>What type skin do you feel you have?</label>
         <div className="buttons">
           <label>
-            <Field name="Skin Type" component="input" type="radio" value="Dry"/> {' '}
+            <Field name="SkinType" component="input" type="radio" value="Dry"/> {' '}
             Dry
           </label>
           <label>
-            <Field name="Skin Type" component="input" type="radio" value="Oily"/> {' '}
+            <Field name="SkinType" component="input" type="radio" value="Oily"/> {' '}
             Oily
           </label>
           <label>
-            <Field name="Skin Type" component="input" type="radio" value="Oily/Combination"/> {' '}
+            <Field name="SkinType" component="input" type="radio" value="Oily/Combination"/> {' '}
             Oily/Combination
           </label>
           {/* <Field name="skinType" component={renderError} /> */}

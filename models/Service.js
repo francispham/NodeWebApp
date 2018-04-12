@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 const TreatmentSchema = require('./Treatment');
 
 const serviceSchema = new Schema ({
-  serviceName: String,
+
   formValues: {},
   treatments: [TreatmentSchema],
   _user: { type: Schema.Types.ObjectId, ref: 'User' },

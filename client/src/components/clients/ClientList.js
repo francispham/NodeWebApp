@@ -35,7 +35,7 @@ class ClientList extends Component {
           </div>
         </div>
           <Link to="/services">
-            Add Services
+            Check Services
           </Link>
       </div>)
     })

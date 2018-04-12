@@ -21,15 +21,15 @@ module.exports = app => {
       //                         create_at, clientSign, userSign, _service
       //                       }) ),
       _user: req.user.id,
-      // _client: req.client.id,
+      _client: req.client.id,
       create_at: Date.now()
     });
     try{
       service.save();
       const user = await req.user.save();
-      // const client = await req.client.save();
+      const client = await req.client.save();
       res.send(user);
-      // res.send(client);
+      res.send(client);
     } catch (err) {
       res.status(422).send(err);
     }
