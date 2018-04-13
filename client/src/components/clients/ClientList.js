@@ -11,7 +11,7 @@ class ClientList extends Component {
 
   renderClients() {
     return this.props.clients.map(client => {
-      console.log(client)
+      // console.log(client)
       return (
         <div className="clients"  key={client._id}>
          <div>

@@ -13,7 +13,7 @@ module.exports = app => {
 
   app.get('/api/clients/:id', requireLogin, async (req, res) => {
     console.log("clientRoutes=========================================")
-    const client = await Client.findById(id, function (err, client) {});
+    const client = await Client.findById( req.params.id , function (err, client) {});
     res.send(client);
   })
 
