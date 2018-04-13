@@ -7,12 +7,13 @@ module.exports = app => {
     // To get only clients belong to current user
     // const clients = await Client.find({ _user: req.user.id });
     const clients = await Client.find()
-    // debugger
+
     res.send(clients);
   })
 
-  app.get('/api/clients/:client_id', requireLogin, async (req, res) => {
-    const client = await Client.findById(req.params.client_id)
+  app.get('/api/clients/:id', requireLogin, async (req, res) => {
+    console.log("clientRoutes=========================================")
+    const client = await Client.findById( req.params.id , function (err, client) {});
     res.send(client);
   })
 

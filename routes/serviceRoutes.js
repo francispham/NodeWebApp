@@ -11,11 +11,10 @@ module.exports = app => {
   })
 
   app.post('/api/services', requireLogin, async(req, res) => {
-    const { formDetails, _user, _client} = req.body;
-    console.log(formDetails)
+    const { formValues, _client, _user} = req.body;
+    console.log(req.body)
     const service = new Service({
-      // serviceName,
-      formDetails,
+      formValues,
       // treatments: treatments.split(',')
       //                       .map( (create_at, clientSign, userSign, _service) => ({
       //                         create_at, clientSign, userSign, _service
@@ -27,9 +26,9 @@ module.exports = app => {
     try{
       service.save();
       const user = await req.user.save();
-      // const client = await req.client.save();
+      const client = await req.client.save();
       res.send(user);
-      // res.send(client);
+      res.send(client);
     } catch (err) {
       res.status(422).send(err);
     }
