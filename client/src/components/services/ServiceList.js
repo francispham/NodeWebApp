@@ -10,7 +10,6 @@ class ServiceList extends Component {
   }
 
   renderServices() {
-    console.log(this.props)
     return this.props.services.map(service => {
       console.log(service)
       return (

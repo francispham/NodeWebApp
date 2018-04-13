@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchClients} from '../../actions';
-// import {Modal, Button, ButtonToolbar} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
-// import ClientDetails from './ClientDetails'
+
 
 class ClientList extends Component {
   componentDidMount() {
@@ -12,31 +11,19 @@ class ClientList extends Component {
 
   renderClients() {
     return this.props.clients.map(client => {
+      console.log(client)
       return (
         <div className="clients"  key={client._id}>
          <div>
           <div>
-            <span>{client.name}</span>
+            <Link to={`/clients/${client._id}`}>
+              <span>{client.name}</span>
+            </Link>
           </div>
           <div>
-            <span>{client.email}</span>
-          </div>
-          <div>
-            <span>{client.phone}</span>
-          </div>
-          <div>
-            <span>{client.age}</span>
-          </div>
-          <div>
-            <span>{client.address}</span>
-          </div>
-          <div>
-            <span>{client.postalCode}</span>
+            <span>{client._id}</span>
           </div>
         </div>
-          <Link to="/services">
-            Check Services
-          </Link>
       </div>)
     })
   }

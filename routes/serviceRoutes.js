@@ -11,10 +11,9 @@ module.exports = app => {
   })
 
   app.post('/api/services', requireLogin, async(req, res) => {
-    const { formValues, _user, _client} = req.body;
+    const { formValues, _client, _user} = req.body;
     console.log(req.body)
     const service = new Service({
-      // serviceName,
       formValues,
       // treatments: treatments.split(',')
       //                       .map( (create_at, clientSign, userSign, _service) => ({
