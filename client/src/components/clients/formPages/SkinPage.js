@@ -18,8 +18,8 @@ const renderChronicCondition = ({ input, meta: { touched, error } }) => (
 
 const SkinPage = props => {
     const { handleSubmit, pristine, previousPage, submitting } = props;
-    console.log(props)
-    return (<form onSubmit={this.handleSubmit(this.props.onServiceSubmit)}>
+    // console.log(props)
+    return (<form onSubmit={handleSubmit}>
       <div>
         <h3>Personal Information:</h3><br/>
 
@@ -57,7 +57,7 @@ const SkinPage = props => {
         </div>
         <div className="buttons">
           <label>Any chronic skin conditions?</label>
-        <Field name="favoriteColor" component={renderChronicCondition} />
+        <Field name="chronicSkin" component={renderChronicCondition} />
         </div>
       </div>
       <br/>

@@ -1,5 +1,5 @@
 import  axios from 'axios';
-import { FETCH_USER, FETCH_CLIENTS, FETCH_CLIENT, FETCH_SERVICES } from './types';
+import { FETCH_USER, FETCH_CLIENTS, FETCH_CLIENT } from './types';
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/current_user');
@@ -32,6 +32,7 @@ export const fetchClient = () => async dispatch => {
   dispatch({type: FETCH_CLIENT, payload: res.data });
 }
 
+/*
 export const submitWizard = (formValues, history) => async dispatch => {
   const res = await axios.post('/api/services', {formValues});
   history.push('/clients');
@@ -42,3 +43,5 @@ export const fetchServices = () => async dispatch => {
   const res = await axios.get('/api/services');
   dispatch({type: FETCH_SERVICES, payload: res.data });
 }
+
+*/

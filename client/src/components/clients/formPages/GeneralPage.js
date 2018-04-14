@@ -10,6 +10,9 @@ import {Link} from 'react-router-dom';
 class GeneralPage extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      handleSubmit: {}
+     }
     this.renderFields = this.renderFields.bind(this);
   }
   renderFields() {

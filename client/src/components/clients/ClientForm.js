@@ -2,7 +2,7 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import {Link} from 'react-router-dom';
 // import { Button } from 'react-bootstrap';
 import GeneralPage from './formPages/GeneralPage';
@@ -56,9 +56,9 @@ function validate(values) {
   return errors;
 }
 
-ClientForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
+// ClientForm.propTypes = {
+//   onSubmit: PropTypes.func.isRequired,
+// };
 
 
 export default reduxForm({
