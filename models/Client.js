@@ -11,8 +11,8 @@ const clientSchema = new Schema ({
   address: String,
   postalCode: String,
   create_at: Date,
-  _user: { type: Schema.Types.ObjectId, ref: 'User' },
-  _client: { type: Schema.Types.ObjectId, ref: 'Client' }
+  serviceForm: {},
+  _user: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 mongoose.model('clients', clientSchema);

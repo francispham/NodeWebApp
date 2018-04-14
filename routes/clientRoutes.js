@@ -18,10 +18,11 @@ module.exports = app => {
   })
 
   app.post('/api/clients', requireLogin, async(req, res) => {
-    const {marketing, name, email, password, phone, age, address, postalCode} = req.body;
+    const {marketing, name, email, password, phone, age, address, postalCode, serviceForm} = req.body;
 
     const client = new Client({
       marketing, name, email, password, phone, age, address, postalCode,
+      serviceForm,
       _user: req.user.id,
       create_at: Date.now()
     });

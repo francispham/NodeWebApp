@@ -5,15 +5,15 @@ import * as actions from '../actions';
 import Naving from './Naving';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import Services from './Services';
 import ClientNew from './clients/ClientNew';
-import ClientShow from './clients/ClientShow';
 import ServiceNew from './services/ServiceNew';
+// import ClientShow from './clients/ClientShow';
+// import Services from './Services';
 
 
 
 class App extends Component {
-  
+
   componentDidMount() {
     this.props.fetchUser();
   }
@@ -25,11 +25,12 @@ class App extends Component {
           <div>
             <Naving/>
             <Route exact path="/" component={Landing}/>
-            <Route exact path="/clients" component={Dashboard}/>
-            <Route exact path="/clients/:id" component={ClientShow}/>
             <Route exact path="/clients/new" component={ClientNew}/>
-            <Route exact path="/services/" component={Services}/>
-            <Route exact path="/services/new" component={ServiceNew}/>
+            <Route exact path="/clients" component={Dashboard}/>
+
+            {/* <Route exact path="/clients/:id" component={ClientShow}/> */}
+            {/* <Route exact path="/services/" component={Services}/> */}
+            {/* <Route exact path="/services/new" component={ServiceNew}/> */}
           </div>
         </BrowserRouter>
       </div>

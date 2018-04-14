@@ -7,7 +7,6 @@ import {Button} from 'react-bootstrap';
 class WizardForm extends Component {
 
   render() {
-    // const { onSubmit, handleSubmit } = this.props;
     return (<form onSubmit={this.props.handleSubmit(this.props.onServiceSubmit)}>
       <div>
         <label>What type skin do you feel you have?</label>

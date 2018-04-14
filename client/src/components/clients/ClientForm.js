@@ -1,49 +1,45 @@
 // ClientForm shows a form for a user to add input
 import _ from 'lodash';
 import React, {Component} from 'react';
-import {reduxForm, Field} from 'redux-form';
-import {Link} from 'react-router-dom';
-import ClientField from './ClientField';
+import {reduxForm} from 'redux-form';
+import PropTypes from 'prop-types';
+// import {Link} from 'react-router-dom';
+// import { Button } from 'react-bootstrap';
+import GeneralPage from './formPages/GeneralPage';
+import SkinPage from './formPages/SkinPage';
 import formFields from './formFields';
-import { Button } from 'react-bootstrap';
 
 
 
 class ClientForm extends Component {
 
-  renderFields() {
-    return _.map(formFields, ({ label, type, name }) => {
-      return (
-        <Field
-          key={name}
-          component={ClientField}
-          type={type}
-          label={label}
-          name={name}
-        />
-      )
-    })
+  constructor(props) {
+    super(props);
+    this.nextPage = this.nextPage.bind(this);
+    this.previousPage = this.previousPage.bind(this);
+    this.state = {
+      page: 1,
+    };
+  }
+  nextPage() {
+    this.setState({ page: this.state.page + 1 });
+  }
+
+  previousPage() {
+    this.setState({ page: this.state.page - 1 });
   }
 
   render() {
+    const { onSubmit } = this.props;
+    const { page } = this.state;
     return (
-      <div className="box">
-
-        <form onSubmit={this.props.handleSubmit(this.props.onClientSubmit)}>
-          <h3>Personal Information:</h3><br/>
-          {this.renderFields()}
-          <div className="buttons">
-            <Button bsStyle="danger">
-              <Link to="/clients">
-              Cancel
-              </Link>
-            </Button>
-
-            <Button bsStyle="success" type="submit">
-              Next
-            </Button>
-          </div>
-        </form>
+      <div>
+        {page === 1 && <GeneralPage onSubmit={this.nextPage} />}
+        {page === 2 &&
+          <SkinPage
+            previousPage={this.previousPage}
+            onSubmit={onSubmit}
+          />}
       </div>
     );
   }
@@ -59,6 +55,11 @@ function validate(values) {
 
   return errors;
 }
+
+ClientForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
 
 export default reduxForm({
   validate,

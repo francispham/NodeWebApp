@@ -29,7 +29,7 @@ const ClientFormReview = ({onCancel, formValues, submitClient, history}) => {
       <Button
         onClick={() => submitClient(formValues, history)}
         type="submit" bsStyle="success">
-        <Link to="/services">
+        <Link to="/clients">
           Add Services
         </Link>
       </Button>
