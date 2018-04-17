@@ -25,8 +25,10 @@ export const fetchClients = () => async dispatch => {
   dispatch({type: FETCH_CLIENTS, payload: res.data });
 }
 
-export const fetchClient = () => async dispatch => {
-  const res = await axios.get('/api/clients/:id');
+export const fetchClient = (params) => async dispatch => {
+  // const res = await axios.get(`/api/clients/${client._id}`);
+  const res = await axios.get(`/api/clients/${params.id}`);
+  // const res = await axios.get(`/api/clients/5abb028936167e0a6cc32bbd`);
   console.log(res.data)
 
   dispatch({type: FETCH_CLIENT, payload: res.data });

@@ -15,11 +15,11 @@ class ClientShow extends Component {
   // }
 
   componentDidMount() {
-    this.props.fetchClient();
+    this.props.fetchClient(this.props.match.params);
   }
 
   render() {
-    const {client} = this.state.client
+    const {client} = this.props
     console.log(client)
 
     return(
