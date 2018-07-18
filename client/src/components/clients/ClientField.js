@@ -1,5 +1,3 @@
-// SurveyField contains logic to render a single
-// label and text input
 import React from 'react';
 import { FormControl, FormGroup, ControlLabel } from 'react-bootstrap';
 

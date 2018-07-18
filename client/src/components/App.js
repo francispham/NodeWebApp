@@ -13,7 +13,7 @@ import ServiceNew from './services/ServiceNew';
 
 
 class App extends Component {
-  
+
   componentDidMount() {
     this.props.fetchUser();
   }
@@ -26,10 +26,10 @@ class App extends Component {
             <Naving/>
             <Route exact path="/" component={Landing}/>
             <Route exact path="/clients" component={Dashboard}/>
-            <Route exact path="/clients/:id" component={ClientShow}/>
             <Route exact path="/clients/new" component={ClientNew}/>
             <Route exact path="/services/" component={Services}/>
             <Route exact path="/services/new" component={ServiceNew}/>
+            <Route path="/clients/:id" component={ClientShow}/>
           </div>
         </BrowserRouter>
       </div>
