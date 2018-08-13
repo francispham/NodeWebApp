@@ -1,6 +1,6 @@
 # Final Project
 Still in development
-
+https://c12018fnpj.herokuapp.com/
 StMedi Spa business website with Client Management System.
 
 ## Getting Started
@@ -23,7 +23,7 @@ Run the following commands in your terminal, after cloning the repo:
 * Redux
 * MongoDB
 * reduxForm
-
+* Heroku 
 ## Author: Francis Pham
 
 ## License
