@@ -1,7 +1,7 @@
 {
-  "name": "finalproject",
+  "name": "NodeWebApp",
   "version": "1.0.0",
-  "description": "CodeCore Final Project with React Redux Express & MongoDB ",
+  "description": "React Redux Express & MongoDB ",
   "main": "index.js",
   "engines": {
     "node": "8.9.4",
@@ -23,13 +23,13 @@
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.3",
     "mongoose": "^5.0.10",
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "npm": "^5.8.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
     "stripe": "^5.5.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.18.6"
   }
 }

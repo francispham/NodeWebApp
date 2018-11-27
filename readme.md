@@ -1,4 +1,4 @@
-# Final Project
+# Node Web App Project
 Still in development
 
 StMedi Spa business website with Client Management System.
@@ -8,7 +8,6 @@ StMedi Spa business website with Client Management System.
 Run the following commands in your terminal, after cloning the repo:
 
 ```
-> cd FinalProject
 > cd client
 > npm install
 > cd ..
